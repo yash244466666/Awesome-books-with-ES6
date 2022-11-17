@@ -6,13 +6,13 @@ import store from './modules/store.js';
 nav();
 
 class UI {
-  static displayBooks() {
+  static displayBooks = () => {
     const books = store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book));
   }
 
-  static addBookToList(book) {
+  static addBookToList = (book) => {
     const list = document.querySelector('#data');
 
     const div = document.createElement('div');
@@ -28,13 +28,13 @@ class UI {
     list.appendChild(div);
   }
 
-  static deleteBook(el) {
+  static deleteBook = (el) => {
     if (el.classList.contains('delete')) {
       el.parentElement.parentElement.remove();
     }
   }
 
-  static clearField() {
+  static clearField = () => {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
   }
